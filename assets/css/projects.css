@@ -1,0 +1,110 @@
+@import "global.css";
+
+.container {
+  width: 960px;
+  /*background-color: bisque;*/
+  margin: 0 auto;
+}
+
+.project-title {
+  padding-bottom: 0;
+  text-align: left;
+  display:inline;
+  color: white;
+}
+
+.row p {
+  padding: 0 10px;
+  text-align: left;
+  font-size: 1.15em;
+}
+
+.column a {
+  font-size: 1.15em;
+  color: #a8bdbd;
+  text-decoration: none;
+  border-bottom: 1.5px dashed #a8bdbd;
+}
+
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.row li {
+  padding: 0 10px;
+}
+
+.row li::before {
+  content: "* ";}
+/* Create 2 equal columns */
+
+.column {
+  flex: 50%;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.column-picture {
+  flex: 25%;
+  padding: 10px;
+}
+
+.column-picture2 {
+  flex: 25%;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.column-picture2 img {
+  max-width: 100%;
+  width: 75%;
+
+}
+
+.column-picture img {
+  max-width: 100%;
+  margin: auto;
+}
+
+h1.site a.navproject:hover span { display:none; }
+h1.site a.navproject:hover:before {
+  /* Adds spaces to pickup hover when text changes */
+  content:"> trnr.dev/\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+  display: inline-block;
+}
+
+
+/* On screens that are 992px wide or less, go from 2 columns to 1 columns */
+@media screen and (max-width: 992px) {
+  .container {
+    width: 95%;
+  }
+  .column {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+  
+  h1.site {
+    font-size: 1.5em;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+}
